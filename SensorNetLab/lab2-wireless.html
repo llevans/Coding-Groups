@@ -1,0 +1,71 @@
+<html><head><title>Lab 2: Using Wireless module in NS</title></head>
+<body bgcolor="#ffffff" text="#000000">
+<h1> Lab 2 : Using Wireless module in NS</h1>
+
+<p>
+This part of the lab will consist of creating wireless simulations in ns.
+
+</p><ol>
+<li>Create a simple 3 node wireless topology. The nodes use DSDV (an
+ad-hoc routing protocol) to route packets among themselves. They also
+use <ul>
+<li>802.11 mac
+</li><li>two-ray ground radio propagation model
+</li><li>priority queue with queue length of 50
+</li><li>omni-directional antenna
+</li><li>topology of 670 X 670.
+</li><li>the simulation stops at 200s
+<p>
+
+</p></li><li>A sample script having other default values for the network components are provided at <a href="http://www.isi.edu/nsnam/ns/ns-tutorial/tutorial-02/lab/ex/lab2-wl.tcl">lab2-wl.tcl</a>.
+<p>
+</p></li><li>Node movement: Simple node movement scenario (created by hand) can be found in lab2-wl.tcl.
+<p>
+</p></li><li>Traffic generation: Setup a UDP connection between node 0;
+add CBR traffic. You can use the following values for the cbr flow. Let
+the cbr source start at time 50s.
+<pre>$cbr_(0) set packetSize_ 512     (in bytes)
+$cbr_(0) set interval_ 0.5       (interarrval time)
+$cbr_(0) set random_ 1           
+$cbr_(0) set maxpkts_ 10000
+$cbr_(0) set fid_ 0
+</pre>
+</li><li> Turn on agent and router tracing. Turn mac tracing to off.
+</li><li> Set a nam animation rate of 100ms.
+</li><li> Open trace file to view ns trace output.(You may name it wirelesslab.tr)
+</li><li> Open namtrace file to view nam animation of yr simulation. (Similarly wirelesslab.nam)
+
+
+</li><li> Create and run the script in ns. View the nam output in nam.
+<pre>Can you see the periodic DSDV routing messages? ...
+Can you see the CBR packets flowing? 
+Can you see the nodes moving in and out of their radio ranges? 
+
+</pre>
+</li></ul>
+<p>
+</p></li><li> Now turn on mac tracing. Run yr simulation and then look
+at the trace output. Can you see RTS/CTS transmissions at the MAC
+layer?
+<p>
+</p></li><li> Next add incoming packet loss model to the nodes. Run sim and look at trace outputs again.
+Can you see MAC re-transmissions for lost packets?
+<br>Use "-IncomingErrProc UniformErrorProc" to add the error model.
+
+<p> 
+</p></li><li> Remove the error model and now add energy model to the mobilenodes. Use the following values:
+<pre>* attach an energy model          -energyModel EnergyModel
+* Initial energy of 0.455 joules. -initialEnergy $opt(IE)
+* Rx power of 0.3                 -rxPower $opt(rp)
+* Tx power of 0.6                 -txPower $opt(tp)
+</pre>
+
+And run simulations. What do you see? Why? [hint:energy-efficiency of MAC]
+<p>
+</p></li><li> Replace the 802.11 mac with Mac/SMAC (sensor MAC). Run simulation and view in nam.
+What happens now?
+
+<p>
+</p><p>
+Optional: Use nam editor to create the wireless scenario in (1) above.
+</p></li></ol></body></html>
