@@ -1,6 +1,5 @@
-### Coding Samples
----
 ##Purpose
+---
   * This repository holds complex coding and design samples for languages other than Java.
   * C++
     * Numerical analysis modules.
