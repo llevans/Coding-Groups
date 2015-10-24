@@ -8,5 +8,5 @@
   * SensorNetLab
     * Utilize Sensor Network emulation to complete a lab assignment.
   * Diagrams
-    * Collaboration UML diagrams.
+    * UML collaboration diagrams.
     
