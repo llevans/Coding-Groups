@@ -9,4 +9,6 @@
     * Utilize Sensor Network emulation to complete a lab assignment.
   * Diagrams
     * UML collaboration diagrams.
+  * Py
+    * Python modules 
     
